@@ -1,0 +1,43 @@
+
+html, body, div, ul, ol, li, form, fieldset, legend {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+a:link {
+	text-decoration: none;
+}
+img {
+	border: 0;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+input, textarea, select {
+	font-size: 110%;
+	line-height: 1.1;
+}

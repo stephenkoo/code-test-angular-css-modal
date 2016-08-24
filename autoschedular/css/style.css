@@ -1,0 +1,112 @@
+* {
+	/*border: 1px solid black;*/
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h3, .button {
+	font: semibold;
+}
+
+h3 {
+	color: #004fbd;
+	font: 16px;
+}
+
+.overlay {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 10;
+	opacity: 0;
+	transition: opacity 150ms ease-in;
+	pointer-events: none;
+	overflow-y: scroll;
+	max-height: 100%;
+}
+
+.overlay:target{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+
+.modal {
+	width: 400px;
+	position: relative;
+	padding: 40px;
+	margin: 30px auto;
+	background: #FFF;
+}
+
+.modal__header {
+	/*display: block;*/
+}
+.modal__header h3 {
+	display: inline-block;
+	margin: 20px 0;
+	vertical-align: middle;
+	text-align: center;
+
+}
+
+.modal .close.button {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ddd;
+	background-color: #f7f7f7;
+	color: #666;
+}
+
+i {
+	/* Not sure if most elegant way to center icons */
+	vertical-align: middle;
+}
+
+li {
+	font: 12px;
+	color: #808080;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+	margin: 0 10px;
+}
+li i {
+	float: right;
+	font: 16px;
+	color: #ccc;
+}
+.modal__body :checked + label {
+	color: #666;
+}
+
+.modal__body :disabled + label {
+	color: #999;
+}
+
+.modal__footer .action.button {
+	float: right;
+	/*background: red;*/
+}
+
+.button {
+	font: 14px;
+}
+
+.action.button {
+	height: 40px;
+	padding: 13px;
+	background: #01a42d;
+	color: #FFF;
+	display:inline;
+	position: absolute;
+}
+
+
+.modal, .button {
+	border-radius: 3px;
+}
