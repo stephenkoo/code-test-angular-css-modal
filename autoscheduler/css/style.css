@@ -1,3 +1,4 @@
+@import url();
 * {
 	/*border: 1px solid black;*/
 }
@@ -121,5 +122,33 @@ a {
 }
 
 input[type="checkbox"] {
-	/*display: none;*/
+	display: none;
+}
+
+input[type="checkbox"] + label:before {
+	font-family: 'Material Icons';
+	content: '';
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	background: #eee;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+}
+
+input[type="checkbox"]:checked + label:before {
+	content: 'check';
+	color: #FFF;
+	/*background-image: url('../assets/check.svg');
+	background-color: #FFF; */
+	background: #056bfa;
+}
+
+input[type="checkbox"]:disabled + label:before {
+	border: none;
+	background: #ccc;
+	box-shadow: none;
 }
