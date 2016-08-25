@@ -1,6 +1,7 @@
 * {
 	/*border: 1px solid black;*/
 }
+
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -35,7 +36,6 @@ h3 {
 	pointer-events: auto;
 }
 
-
 .modal {
 	width: 400px;
 	position: relative;
@@ -44,15 +44,16 @@ h3 {
 	background: #FFF;
 }
 
-.modal__header {
-	/*display: block;*/
-}
-.modal__header h3 {
+.modal__header * {
 	display: inline-block;
 	margin: 20px 0;
 	vertical-align: middle;
 	text-align: center;
+}
 
+
+.modal, .button {
+	border-radius: 3px;
 }
 
 .modal .close.button {
@@ -61,25 +62,13 @@ h3 {
 	border: 1px solid #ddd;
 	background-color: #f7f7f7;
 	color: #666;
+	
 }
 
-i {
-	/* Not sure if most elegant way to center icons */
-	vertical-align: middle;
+.modal .close.button i {
+	margin: 0;
 }
 
-li {
-	font: 12px;
-	color: #808080;
-	padding: 10px 0;
-	border-bottom: 1px solid #ddd;
-	margin: 0 10px;
-}
-li i {
-	float: right;
-	font: 16px;
-	color: #ccc;
-}
 .modal__body :checked + label {
 	color: #666;
 }
@@ -88,25 +77,49 @@ li i {
 	color: #999;
 }
 
-.modal__footer .action.button {
-	float: right;
-	/*background: red;*/
-}
-
 .button {
 	font: 14px;
 }
 
 .action.button {
 	height: 40px;
-	padding: 13px;
+	line-height: 40px;
+	padding: 0 13px;
 	background: #01a42d;
 	color: #FFF;
-	display:inline;
-	position: absolute;
 }
 
+.modal__footer {
+	margin: 20px 0;
+	overflow: auto;
+}
 
-.modal, .button {
-	border-radius: 3px;
+.modal__footer a {
+	float: right;
+}
+
+li {
+	width: 100%;
+	font: 12px;
+	color: #808080;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+li * {
+	margin: 0 10px;
+}
+
+li .drag-handle {
+	float: right;
+	font: 16px;
+	color: #ccc;
+}
+
+a {
+	display: inline-block;	
+}
+
+input[type="checkbox"] {
+	/*display: none;*/
 }
