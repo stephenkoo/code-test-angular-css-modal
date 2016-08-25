@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="AutoSchedulerApp" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>RotaGeek</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="js/todosController.js"></script>
+    <script src="js/autoschedulerController.js"></script>
     <script src="js/app.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -17,7 +19,7 @@
 	<!-- Autoscheduler Modal -->
 	<div class="overlay" id="autoscheduler">
 
-		<div class="autoscheduler modal">
+		<div ng-controller="AutoschedulerController" class="autoscheduler modal">
 			<div class="modal__header">
 				<a href="#" title="close" class="close button">
 					<i class="material-icons">close</i>
@@ -27,62 +29,12 @@
 
 			<div class="modal__body">
 				<ul class="list autoscheduler">
-					<li>
-						<input type="checkbox" class="checkbox list" id="1" checked>
-						<label for="1">Contracted Hours</label>
-						<i class="material-icons drag-handle">drag_handle</i>
+					<li ng-repeat="priority in list">
+						<input class="checkbox list" ng-model="priority.isChecked" ng-Disabled="priority.isDisabled" type="checkbox" id="{{$index}}">
+						<label for="{{$index}}">{{ priority.label }}</label>
+						<i ng-if="priority.isSortable" class="material-icons drag-handle">drag_handle</i>
 					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="2" checked>
-						<label for="2">Regularity - Shift length</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="3" checked>
-						<label for="3">Regularity - Shift time</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="4">
-						<label for="4">Regularity - Shift day</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="5">
-						<label for="5">Weekends worked</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="6">
-						<label for="6">Weekends worked - Strict</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="7">
-						<label for="7">Availability - Preferences</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="8">
-						<label for="8">Availability - Fairness</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="9">
-						<label for="9">Cheapest Schedule</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="10">
-						<label for="10">Rotation - Shift length</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="11">
-						<label for="11">Rotation - Shift time</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
+<!-- 					<li>
 						<input type="checkbox" class="checkbox list" id="12">
 						<label for="12">Rotation - Shift day</label>
 						<i class="material-icons drag-handle">drag_handle</i>
@@ -94,27 +46,7 @@
 					<li>
 						<input type="checkbox" class="checkbox list" id="14" checked disabled>
 						<label for="14">Unavailability</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="15">
-						<label for="15">EWTD - Fast</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="16">
-						<label for="16">EWTD - Comprehensive</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="17" checked>
-						<label for="17">5 days in 7</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="18" checked>
-						<label for="18">Positions</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="19" checked>
-						<label for="19">Skills</label>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 
