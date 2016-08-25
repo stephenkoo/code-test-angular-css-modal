@@ -30,23 +30,10 @@
 			<div class="modal__body">
 				<ul class="list autoscheduler">
 					<li ng-repeat="priority in list">
-						<input class="checkbox list" ng-model="priority.isChecked" ng-Disabled="priority.isDisabled" type="checkbox" id="{{$index}}">
-						<label for="{{$index}}">{{ priority.label }}</label>
+						<input class="checkbox list" ng-model="priority.isChecked" ng-Disabled="priority.isDisabled" type="checkbox" id="priority {{$index}}">
+						<label for="priority {{$index}}">{{ priority.label }}</label>
 						<i ng-if="priority.isSortable" class="material-icons drag-handle">drag_handle</i>
 					</li>
-<!-- 					<li>
-						<input type="checkbox" class="checkbox list" id="12">
-						<label for="12">Rotation - Shift day</label>
-						<i class="material-icons drag-handle">drag_handle</i>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="13" checked disabled>
-						<label for="13">Location</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox list" id="14" checked disabled>
-						<label for="14">Unavailability</label>
-					</li> -->
 				</ul>
 			</div>
 
